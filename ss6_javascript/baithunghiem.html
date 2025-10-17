@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<select id = "my_select" >
+	<option value="hihi">
+		BMW
+	</option>
+	<option value="cua tao">
+		bicycle
+	</option>
+	<option value="dung ai gianh">
+		Ream
+	</option>
+	<option value="Liem">
+		Air blade
+	</option>
+	
+</select>
+<body>
+	<!-- <h1 id  = "demo" style="color: red;"> this is la chuot</h1>
+	<h1 id = "vdt"></h1> -->
+	<img src = "Screenshot 2025-10-15 183510.png" id = "hihihdcm" width="200px" height="300	px">
+	<button type="button" onclick='document.getElementById("hihihdcm").src ="Screenshot 2025-10-15 183448.png" '>nhap vao day ne be </button>
+	
+	<img src = "Screenshot 2025-10-15 183510.png">
+	
+	
+	<label for="fname" > check ten</label>
+	<input type="text" id = "hihi" >
+	<button onclick = "hihineem()">checkten cua be</button>
+	<h2> thay doi toi di pls </h2>
+	<p id = "hinebe"> thay doi duoc the meo nao chu</p>
+	<button type="button" onclick='document.getElementById("hinebe").innerHTML = "hello world"'>thay doi roi ne</button>
+	//thay doi hinh anh
+	
+	<script>
+
+		
+		// var intro = "hello world";
+		// document.getElementById("vdt").innerText = intro;
+		// cách 1
+		// function do_some_thing(){
+		// 	var select_value = document.getElementById("my_select").value;
+		// 	alert(select_value);
+		// }
+		// cách 2
+		// var select_value = document.getElementById("my_select");
+		// select_value.addEventListener("change" ,changfunction);
+		// function changfunction(){
+		// 	var checkvalue = document.getElementById("my_select").value;
+		// 	alert(checkvalue)
+		// }
+		// bai 3 sử dụng mouble để trỏ con chuột
+		// function mouseover(){
+		// 	document.getElementById("demo").style.color = "#03fc5e"
+		// }
+		// function outmousene(){
+		// 	document.getElementById("demo").style.color = "#333"
+		// }
+		//cach 2
+		// var cutcmn =document.getElementById("demo");
+		// cutcmn.addEventListener("mouseover",hihi);
+		// cutcmn.addEventListener("mouseout", huhu);
+		// function hihi(){
+		// 	let check_funtion = document.getElementById("demo").style.color = "#03fc5e";
+		// }
+		// function huhu(){
+		// 	let checkdira = document.getElementById("demo").style.color = "#d33333";
+		// }
+		//bai 4 
+		function hihineem(){
+			var x = document.getElementById("hihi").value;
+			alert("hello" + x);
+		}
+		
+	</script>
+	</body>
+</html>
