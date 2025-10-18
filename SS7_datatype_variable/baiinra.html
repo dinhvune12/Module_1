@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>What is the “official” name of JavaScript?</h1>
+	<form id = "formne">
+	<input type="text" id = "nhapdulieu">
+	<input type="submit" id = "noplenhethong">
+	</form>
+	<script>
+		function noplende(){
+			event.preventDefault();// ngăn form reset lại trang chú ý cái này 
+			var nhap = document.getElementById("nhapdulieu").value;
+			if (nhap === "ECMAScript"){
+				alert("right");
+
+			}
+			else {
+				alert("Didn't know? ECMAScript!");
+			}
+		}
+		function init(){
+			document.getElementById("formne").addEventListener("submit",noplende);
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

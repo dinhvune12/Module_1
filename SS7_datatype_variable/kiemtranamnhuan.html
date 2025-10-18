@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1> kiem tra nam nhuan hay khong</h1>
+	<input type="text" id = "kiemtrane">
+	<button id = "kiemtra">kiemtrane</button>
+	<p>la nam  <span id = "inra"> </span></p>
+	<script>
+		function kiemtra(){
+		var nhapdulieu = 	Number(document.getElementById("kiemtrane").value);
+			var indulieu = document.getElementById("inra");
+			if (nhapdulieu % 4 == 0 && nhapdulieu % 100 != 0) {
+				indulieu.textContent = "nhuận";
+			} 
+			else if (nhapdulieu % 100 == 0 && nhapdulieu % 400 != 0) {
+				indulieu.textContent = "không nhuận";
+			} 
+			else if (nhapdulieu % 400 == 0) {
+				indulieu.textContent = "nhuận";
+			} 
+			else {
+				indulieu.textContent = "không nhuận";
+			}
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src = "dichuyentraibanh.js">
+
+  </script>
+  <style>
+    .img_center {
+      display: block; /* can ddeer duocjw dichj chuyenr */
+      margin: 0 auto;
+	  position: relative;
+	  left: 0;
+	  transition: left	 0.2s ease;
+    }
+
+
+    .container {
+      display: flex;
+      justify-content: space-between; 
+      margin: 20px auto;              
+      width: 300px;                   
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Di chuyển trái bóng</h1>
+  <img src="download.png" id="traibanh" class="img_center">
+
+
+  <div class="container">
+    <button id="nutsangtrai">sangtrai</button>
+    <button id="nutsangphai">sangphai</button>
+  </div>
+</body>
+</html>
