@@ -60,7 +60,7 @@
 		document.getElementById("indulieu").textContent = ketqua;
 	}
 	function init(){
-		document.getElementById("cong").onclick =//chú ý chỗ funtion tại vì hàm này hơi lạ 
+		document.getElementById("cong").onclick =
 		function(){ chon("phepcong");};
 		document.getElementById("tru").onclick = function(){ chon("pheptru");};
 		document.getElementById("chia").onclick =function(){ chon("phepchia");};
