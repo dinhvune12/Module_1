@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<span> nhap so tuoi</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so diem trung binh</span>
+	<input type = "text" id  = "sob">
+	<button id = "kiemtra">kiemtra </button>
+	<script>
+		function kiemtra2so(){
+			var soa = parseInt(document.getElementById("soa").value);
+			var sob = parseInt(document.getElementById("sob").value);
+			if(soa >= 15){
+				alert("ban du de vao lop 10");
+				if (sob > 6){
+					alert("ban du dieu kien va diem de vao lop 10")
+				}
+				else{
+					alert("tiec qua du tuoi ma khong vao duoc")
+				}
+			}
+			else {
+				alert("ban khong du tuoi ")
+			}
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

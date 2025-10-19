@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>chon 2 trong 3</h1>
+	<input type="checkbox" id  = "nut1" onclick="kiemtra('nut1')"> <span>fast </span>
+	 <br>	<br>	
+	<input type="checkbox" id  = "nut2" onclick="kiemtra('nut2')">  <span>good </span>
+	 <br>		
+	 <br>
+	<input type="checkbox" id  = "nut3" onclick="kiemtra('nut3')">  <span>cheap </span>
+	 <br>	<br>	
+	<script>
+		function kiemtra(chon){
+			var nut1 = document.getElementById("nut1")
+			var nut2 = document.getElementById("nut2")
+			var nut3 = document.getElementById("nut3")
+			if (nut1.checked && nut2.checked && nut3.checked){
+				if (chon === "nut1"){
+					nut2.checked = false;
+				}
+				else if (chon === "nut2"){
+					nut3.checked = false;
+				}
+				else if (chon === "nut3"){
+					nut1.checked = false;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<span> nhap so a</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so b</span>
+	<input type = "text" id  = "sob">
+	<button id = "kiemtra">kiemtra </button>
+	<script>
+		function kiemtra2so(){
+			var soa = parseInt(document.getElementById("soa").value);
+			var sob = parseInt(document.getElementById("sob").value);
+			if(soa % sob == 0){
+				alert("a chia het cho b");
+			}
+			else {
+				alert("a khong chia het cho b ")
+			}
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

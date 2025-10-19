@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>
+				<span> nhap diem bai kiem tra</span>
+			</th>
+			<th>
+			<span> nhap giua ky</span>
+			</th>
+			<th>
+				<span> nhap cuoi ky</span>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<input type = "text" id  = "soa">
+			</td>
+			<td><input type = "text" id  = "sob"></td>
+			<td><input type = "text" id  = "soc"></td>
+		</tr>
+
+	</table>
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			var b = parseInt(document.getElementById("sob").value);
+			var c = parseInt(document.getElementById("soc").value);
+			var hienthi = document.getElementById("hienthi");
+		 	if (a >= 0 && a <= 10 && b >= 0 && b <= 10&&c >= 0 && c <= 10){
+				var diemtrungbinh = (a + b + c) / 3;
+				if (diemtrungbinh >= 0 && diemtrungbinh <= 5){
+					hienthi.textContent = "diem trung binh ban la "+ diemtrungbinh + "ban hoc sinh yeu"
+				} 
+				if (diemtrungbinh > 5 && diemtrungbinh <= 6.5){
+					hienthi.textContent = "diem trung binh ban la "+ diemtrungbinh + " ban hoc sinh trung binh"
+				} 
+				if (diemtrungbinh > 6.5 && diemtrungbinh <=8){
+					hienthi.textContent = "diem trung binh ban la "+ diemtrungbinh + "ban hoc sinh kha"
+				} 
+				if (diemtrungbinh > 8 && diemtrungbinh <= 10){
+					hienthi.textContent = "diem trung binh ban la "+ diemtrungbinh + "ban hoc sinh gioi"
+				} 
+			}
+			
+			
+		 }
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

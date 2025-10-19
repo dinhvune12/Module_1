@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>
+				<span> nhap doanh so ban hang</span>
+			</th>
+		
+		</tr>
+		<tr>
+			<td>
+				<input type = "text" id  = "soa">
+			</td>
+			
+		</tr>
+
+	</table>
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+
+			var hienthi = document.getElementById("hienthi");
+		 	var thuonghoahong;
+				
+				if (a < 5000000  ){
+					thuonghoahong = a *5 /100;
+					hienthi.textContent = "ban duoc thuong hoa hong " + thuonghoahong;
+				} 
+				else if (a > 5000000  && a < 10000000){
+					thuonghoahong = a *10 /100;
+					hienthi.textContent = "ban duoc thuong hoa hong " + thuonghoahong;
+				} 
+				else if (a > 10000000 && a < 20000000 ){
+					thuonghoahong = a *15 /100;
+					hienthi.textContent = "ban duoc thuong hoa hong " + thuonghoahong;
+				} 
+				else if (a > 20000000  ){
+					thuonghoahong = a *20 /100;
+					hienthi.textContent = "ban duoc thuong hoa hong " + thuonghoahong;
+				} 
+			
+			
+			
+		 }
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

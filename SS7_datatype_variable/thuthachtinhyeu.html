@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function ramdom(){
+			var x = Math.round(Math.random() * window.innerWidth);
+			var y = Math.round(Math.random() * window.innerHeight);
+			document.getElementById("no").style.left  = x + 'px';
+			document.getElementById("no").style.top  = y + 'px';
+		}
+		function chonyes(){
+			alert("yes sir ban thich toi roi")
+		}
+	</script>
+	<h1 style="position:absolute; left:220px; top:175px;""> do you love me </h1>
+	<button value = "yes" onclick="chonyes()" style="position:absolute; left:285px; top:235px;"> yes</button>
+	<button id = "no" onmouseover="ramdom()"style="position:absolute; left:360px; top:235px;"" > no</button>
+</body>
+</html>

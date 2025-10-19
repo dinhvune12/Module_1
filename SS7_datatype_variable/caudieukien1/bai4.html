@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<span> nhap so a</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so b</span>
+	<input type = "text" id  = "sob">
+	<span> nhap so c</span>
+	<input type = "text" id  = "soc">
+	<button id = "kiemtra">kiemtra </button>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			var b = parseInt(document.getElementById("sob").value);
+			var c = parseInt(document.getElementById("soc").value);
+			if ( a > b){
+				if(a > c ){
+					alert(a)
+				}
+				else {
+					alert(c);
+				}
+			}
+			else{
+				if(b > c){
+					alert(b);
+				}
+				else {
+					alert(c);
+				}
+			}
+			
+			
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>
