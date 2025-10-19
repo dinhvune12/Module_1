@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>may tinh ne</title>
+	<script src  = "maytinhcoban.js" defer></script>
+	<style>
+		button{
+			width: 50px;
+		}
+		.tohon {
+			width: 250px;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="color: red;"> may tinh co ban </h1>
+	<table>
+		<tr>
+			<th colspan="4" > <input type="text" id = "screen" class="tohon"></th>
+		</tr>
+		<tr>
+			<th>
+				<button id = "so1" value="1" onclick="tinhketqua('1')">1</button>
+			</th>
+			<th>
+				<button id = "so2" value="2" onclick="tinhketqua('2')" >2</button>
+			</th>
+			<th>
+				<button id = "so3" value="3"  onclick="tinhketqua('3')">3</button>
+			</th>
+				<th>
+					<button id = "so+" value="+" onclick="tinhketqua('+')">+</button>
+				</th>
+
+		</tr>
+		<tr>
+			<th>
+				<button id = "so4" value="4" onclick="tinhketqua('4')">4</button>
+			</th>
+			<th>
+				<button id = "so5" value="5"onclick="tinhketqua('5')" >5</button>
+			</th>
+			<th>
+				<button id = "so6" value="6" onclick="tinhketqua('6')">6</button>
+			</th>
+				<th>
+					<button id = "so-" value="-" onclick="tinhketqua('-')">-</button>
+				</th>
+
+		</tr>
+		<tr>
+			<th>
+				<button id = "so7" value="7" onclick="tinhketqua('7')">7</button>
+			</th>
+			<th>
+				<button id = "so8" value="8" onclick="tinhketqua('8')">8</button>
+			</th>
+			<th>
+				<button id = "so9" value="9" onclick="tinhketqua('9')">9</button>
+			</th>
+				<th>
+					<button id = "so*" value="*" onclick="tinhketqua('*')">*</button>
+				</th>
+				<tr>
+			<th>
+				<button id = "soAC" value="AC" onclick="xoa()">AC</button>
+			</th>
+			<th>
+				<button id = "so0" value="0" onclick="tinhketqua('0')">0</button>
+			</th>
+			<th>
+				<button id = "so=" value="=" onclick="init()">=</button>
+			</th>
+				<th>
+					<button id = "so/" value="/" onclick="tinhketqua('/')">/</button>
+				</th>
+
+		</tr>
+		</tr>
+	</table>
+</body>
+</html>
