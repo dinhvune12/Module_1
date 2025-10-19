@@ -1,0 +1,45 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>phuong trinh bac 1</title>
+</head>
+<body>
+	<span> nhap so a</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so b</span>
+	<input type = "text" id  = "sob">
+	<span> nhap so c</span>
+	<input type = "text" id  = "soc">
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			var b = parseInt(document.getElementById("sob").value);
+			var c = parseInt(document.getElementById("soc").value);
+			var hienthi = document.getElementById("hienthi");
+			var denta = Math.pow(b,2) - 4 * a*c;
+			if ( denta > 0  ){
+				var x1 = (-b - Math.sqrt(denta,2)) / (2 * a);
+				var x2 = (-b + Math.sqrt(denta,2)) / (2 * a);
+				hienthi.textContent = "phuong trinh co 2 nghiem la " + x1+ " va " +x2;
+			}
+			else if (denta === 0){
+				var c = -b / (2*a);
+				hienthi.textContent = "phuong trinh nghiem kep la "+ c;
+			}
+			else if (denta < 0 ){
+				hienthi.textContent = "phuong trinh vo nghiem  ";
+			}
+			
+			
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

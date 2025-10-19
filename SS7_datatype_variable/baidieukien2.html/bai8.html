@@ -1,0 +1,35 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tinh so tuong</title>
+</head>
+<body>
+	<span> nhap so tuoi</span>
+	<input type = "text" id  = "soa">
+	
+	
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			
+			var hienthi = document.getElementById("hienthi");
+			if ( a > 0 && a <= 120 ){
+				hienthi.textContent = "tuoi cua con nguoi";
+			}
+			else{
+				hienthi.textContent = "tuoi cua con quai vat";
+			}
+			
+			
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

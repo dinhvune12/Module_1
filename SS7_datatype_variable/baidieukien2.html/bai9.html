@@ -1,0 +1,44 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>kiem tra co phai tam giac khong</title>
+</head>
+<body>
+	<span> nhap so a</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so b</span>
+	<input type = "text" id  = "sob">
+	<span> nhap so c</span>
+	<input type = "text" id  = "soc">
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			var b = parseInt(document.getElementById("sob").value);
+			var c = parseInt(document.getElementById("soc").value);
+			var hienthi = document.getElementById("hienthi");
+		
+			if ( a > 0 && b > 0 && c > 0 ){
+				if(a+b > c || a+ c > b || b + c > a ){
+					hienthi.textContent = "du dieu kien cua tam giac"
+				}
+				else{
+					hienthi.textContent = " khong du dieu kien cua tam giac"
+				}
+			
+			
+		}
+		else{
+			hienthi.textContent = " nhap canh lon hon 0 "
+		}
+	}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>phuong trinh bac 1</title>
+</head>
+<body>
+	<span> nhap so a</span>
+	<input type = "text" id  = "soa">
+	<span> nhap so b</span>
+	<input type = "text" id  = "sob">
+	
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			var b = parseInt(document.getElementById("sob").value);
+			var hienthi = document.getElementById("hienthi");
+			if ( a === 0 && b !== 0 ){
+				hienthi.textContent = "phuong trinh vo nghiem";
+			}
+			else if (a !== 0){
+				var c = -b / a;
+				hienthi.textContent = "phuong trinh 1 nghiem la "+ c;
+			}
+			else if (a === 0 && b === 0 ){
+				hienthi.textContent = "phuong trinh vo so  nghiem";
+			}
+			
+			
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

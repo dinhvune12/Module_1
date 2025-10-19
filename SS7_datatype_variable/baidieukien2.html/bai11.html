@@ -1,0 +1,52 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>thue thu nhap</title>
+</head>
+<body>
+	<span> nhap so tien luong theo nam</span>
+	<input type = "text" id  = "soa">
+	
+	
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			
+			var hienthi = document.getElementById("hienthi");
+			var tongdien = 0;
+			if(a > 0){
+			
+			 if ( a <=10000000){
+				tongdien = a * 5 / 100;
+			}
+			else if ( a <=30000000){
+					tongdien = a * 15 / 100;
+			}
+			else if ( a <=50000000){
+					tongdien = a * 25 / 100;
+			}
+				else if (a && a <=80000000){
+					tongdien = a * 30 / 100;
+			}
+			else if ( a >80000000){
+				tongdien = a * 35 / 100;
+			}
+			
+			theonam = tongdien * 12;
+			hienthi.textContent = " so tien theo thang "+ a+" la "+tongdien.toLocaleString('vi-VN') + "VND" + "tien dien theo nam "+ theonam.toLocaleString('vi-VN') +"VND";
+		}
+		else{
+				hienthi.textContent = " tien khong duoc duoi 0"
+			}
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

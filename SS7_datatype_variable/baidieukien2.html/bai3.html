@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>
+				<span> dien tich hinh vuong</span>
+			</th>
+		
+		</tr>
+		<tr>
+			<td>
+				<input type = "text" id  = "soa">
+			</td>
+			
+		</tr>
+
+	</table>
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+
+			var hienthi = document.getElementById("hienthi");
+		 	
+				if (a > 0){
+					var dientich =Math.pow(a , 2) ;
+					hienthi.textContent = "dien tich hinh vuong la  " + dientich;
+				}
+				else{
+						alert("khong duoc nhap so nho hon 0 vui long nhap lai");
+				}
+			
+				
+			
+			
+			
+		 }
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

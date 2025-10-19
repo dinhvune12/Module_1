@@ -1,0 +1,55 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tinh tien dien</title>
+</head>
+<body>
+	<span> nhap so KWH gia dinh dung</span>
+	<input type = "text" id  = "soa">
+	
+	
+	<button id = "kiemtra">kiemtra </button>
+	<p ><span id ="hienthi" ></span> </p>
+	<script>
+		function kiemtra2so(){
+			var a = parseInt(document.getElementById("soa").value);
+			
+			var hienthi = document.getElementById("hienthi");
+			var tongdien = 0;
+			if( a > 0){
+			if(a <= 50){
+				tongdien = a * 1984; 
+			}
+			else if ( a <=100){
+				tongdien = 50 * 1984 + (a - 50 ) * 2050;
+			}
+			else if ( a <=200){
+				tongdien = 50 * 1984 + 50 * 2050 + (a - 100) * 2380	;
+			}
+			else if ( a <=300){
+				tongdien = 50 * 1984 + 50 * 2050 +100 * 2380 + (a - 200) * 2998	;
+			}
+				else if ( a <=400){
+				tongdien = 50 * 1984 + 50 * 2050 +100 * 2380 + 100 * 2998 + (a - 300) * 3350	;
+			}
+			else if ( a <=500){
+				tongdien = 50 * 1984 + 50 * 2050 +100 * 2380 + 100 * 2998 + 100 * 3350+ (a - 400) *3460	;
+			}
+			hienthi.textContent = " so tien dien voi "+ a+" la "+tongdien.toLocaleString('vi-VN') + "VND";
+			}
+			else {
+				hienthi.textContent = "dien khong the nho hon 0";
+			}
+
+			 
+			
+		}
+		function init(){
+			document.getElementById("kiemtra").onclick = kiemtra2so;
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>
