@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+<style>
+	body {
+		font-family: Arial;
+		text-align: center;
+	}
+	table{
+		border-collapse: collapse;
+		margin: 10px;
+		display: inline-block;
+	}
+	td {
+		padding: 5px 10px;
+		border: 1px solid black;
+
+	}
+	h2{
+		margin: 0;
+		color: aqua;
+	}
+</style>
+</head>
+<body>
+	<h1>sinh bang cuu chuong</h1>
+	
+	<script>
+		
+	
+		for(var i  = 1; i <= 10;i++){
+			taoban = `<table> <tr cowspans = "2"> <th><h2>ban cuu chuong ${i}</h2> </th></tr>`;
+			for (var j = 1; j <=10;j++){
+				taoban += `<tr><td> ${i} * ${j}</td><td>= ${i * j}</td></tr>`; // dâu ` để có thể ghi kết quả bằng $ trong s
+				// cript phần này khó chỗ lồng bảng với bảng
+				
+			}
+			taoban += "</table>";
+			document.write(taoban);
+		}
+		
+	</script>
+
+</body>
+</html>
