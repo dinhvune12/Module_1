@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function songuyento(n){
+			if(n < 0){
+				return 0;
+			}
+			for (var i = 2;i < Math.sqrt(n);i++){
+				if (n % i == 0){
+					return 0;
+				}
+			}
+			return 1;
+		}
+		function insotheon(){
+			let x = true;
+			var n = Number(prompt("nhap so luong n ban muon"));
+			for(var i= 1;i < n ; i++){
+				if(songuyento(i) == x){
+					document.write(i +"<br>");
+				}
+			}
+		}
+		insotheon();
+	</script>
+</body>
+</html>
