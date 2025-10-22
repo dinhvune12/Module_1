@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function sofibonanci(n){
+		var	f = [];
+		f[0] = 0;
+		f[1] = 1;
+		
+		for(var i = 2;i < n;i++){
+			f[i] = f[i-1] + f[i-2];
+			
+		}
+		for(var i = 0; i < n;i++){
+			document.write(f[i] + "<br>");
+		}
+		
+		
+		}
+		sofibonanci(20);
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//intamgiac1
+		function intamgiac1(n){
+				for(var i = 1;i <= n;i++	){
+			for(var j = 1;j<=i;j++){
+				document.write("*");
+			}
+			document.write("<br>")
+		}
+	}
+	intamgiac1(5)
+	document.write("<br>")
+		function intamgiac2(n){
+				for(var i = 1;i <= n;i++	){
+			for(var j = 0;j<= n - i;j++){
+				document.write("*");
+			}
+			document.write("<br>")
+		}
+	}
+	document.write("<br>")
+	intamgiac2(5)
+		function intamgiac3(n){
+		for(var i = 1;i <= n;i++	){
+			for(var j = 1;j<=n-i;j++){
+				document.write("&nbsp&nbsp");
+			}
+			for(var k = 1; k <=i; k++){
+			document.write("*");
+			}
+			document.write("<br>")
+		}
+		}
+		document.write("<br>")
+		intamgiac3(5)
+		//tam giac 4
+		function intamgiac4(n){
+		for(var i = 0;i <= n;i++	){
+			for(var j = 1;j<=i;j++){
+				document.write("&nbsp&nbsp");
+			}
+			for(var k = 1; k <=n-i; k++){	
+			document.write("*");
+			}
+			document.write("<br>")
+		}
+		}
+		document.write("<br>")
+		intamgiac4(5)
+	</script>
+</body>
+</html>

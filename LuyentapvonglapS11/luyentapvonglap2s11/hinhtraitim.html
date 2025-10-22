@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- // mo ta tam giac em dinh ve  -->
+  <!-- ***   ***
+	  ***** *****
+	 *************
+	  ***********
+	   *********
+	    *******
+		 *****
+		  ***
+		   *  -->
+	<script>
+		function hinhtrong(n){
+				for(var i = n/2; i <=n;i+=2){ //đầu tiên em cho vẽ theo từng nấc bậc thang xuống mỗi bậc tăng 2 lần và số lần lặp thì bằng n / 2;
+					for(var j =1; j < n-i;j+=2){//tiếp là khoảng trông thì em cho giảm theo i kiểu như là j < n- i thì j < 6 - 3 thì sẽ tao ra 3 khoảng trông thôi
+						document.write("&nbsp&nbsp");
+					}
+					for(var j = 1; j <=i;j++){//tiếp là in * thì do vòng lặp trên chia cho 2 nên i chỗ này lần lượt là 3 và 5 (1)
+						document.write("*");
+					}
+					for(var j = 1; j <=n-i;j++){// em in bên trái xong rồi em tao ra khoảng trống ở giữa cx là 3 1 và 
+						document.write("&nbsp&nbsp");		
+					}
+					for(var j = 1; j<=i;j++){ //rồi em in ra sao bên kia cũng bằng i là 3 5 (2) (1 và 2 giống nhau )
+						document.write("*");
+						
+					}
+					document.write("<br>");//mõi vòng xuống
+			}
+			for (var i = n; i >=1; i-- ){ //em cho nó giảm dần từ 6 5 4 lùi xuống dần 
+				for(var j = i;j< n ;j++){ //rồi em cho j bằng i là hàng ngang vì j = 6 mà n thì 6 nên không được nên không có số lần lặp khoản không
+					document.write("&nbsp&nbsp");
+				}
+				for(var j = 1; j <= (i * 2) -1;j++){ //và do em muốn vẽ tam giác ngược ruột đặc sệt nên mỗi hàng em giảm đi 3 giảm đi 2 vẫn được khúc cuối sẽ không hiện ra mũi nhọn
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+			
+		}
+		hinhtrong(6)
+	</script>
+</body>
+</html>
