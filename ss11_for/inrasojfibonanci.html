@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//cach 1 cua fibonanci dung mảng giống python hoặc c++;
+		function fibonanci(n){
+			let fibo = [];
+			fibo[0] =0;
+			fibo[1] = 1;
+			for(var i = 2; i < n;i++){
+				fibo[i] = fibo[i-1] + fibo[i-2];
+			}
+			for(var i = 0; i < n;i++){
+				document.write(fibo[i]+"<br>");
+			}
+		}
+		fibonanci(20);
+		//cách 2 không dùng mảng dùng bình thường 
+	// 	function fibonanci2(n){
+	// 		if ( n===1 || n === 0){
+	// 			return 1;
+	// 		}
+	// 		var f1 = 1,f2 = 0,fn;
+	// 		document.write(f2 + "<br>");
+	// 		document.write(f1 + "<br>");
+	// 		for(var i = 1; i <= n; i++){
+	// 			fn = f1 + f2;
+	// 			document.write(fn + "<br>")
+	// 		if (fn ===n){
+	// 			return 1;
+	// 		}
+	// 		f2 = f1;   // vis duj neeus 0 f2 1 f1 1  thif 1 cua f1 nayf sex laf f2 vaf f1 sex di leen trc cuar fn  
+	// 		f1 = fn;
+	// 	}
+	// 	return 0;
+	// }
+	// fibonanci2(20);
+
+	</script>
+</body>
+</html>

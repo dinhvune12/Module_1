@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>nhiet do co the </h1>
+	
+	
+	
+	<script>
+		
+		
+		function xuatketquanne(){
+			let nhap ;
+			do {
+				 nhap = Number(prompt("Nhập nhiệt độ (từ 20 đến 100):"));
+				if(nhap < 20 ){
+					alert("tang nhiet do di");
+				}
+				else if(nhap > 100){
+					alert( "giam nhiet do di");
+				}
+				else{
+				alert( "nhiet do vua du");
+				}
+			} while (nhap < 20 || nhap > 100);
+		}
+		xuatketquanne();
+	</script>
+</body>
+</html>

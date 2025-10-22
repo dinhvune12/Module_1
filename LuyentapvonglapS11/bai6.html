@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		function tong(){
+			var max = 1e9;
+			sum = 0
+			var dem = 0;
+			for(var i = 0; i < max ; i+=7){
+				sum += i;
+				dem++;
+				if(dem===30)
+				break;
+			}
+			document.write(sum);
+				
+
+				
+			
+		}
+		tong();
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button id = "batdau">batdau</button>
+	<script>
+		function init(){
+			document.getElementById("batdau").onclick = trochoi;
+		}
+		function trochoi(){
+			var chonsotrongkhoan  = parseInt(prompt("nhap khoan ban muon nef") ); 
+			if(isNaN(chonsotrongkhoan) || chonsotrongkhoan < 1){
+				alert("nhap so khong hop le dung tro choi");
+				return;
+			}
+			var khoangran = Math.floor(Math.random() * chonsotrongkhoan) + 1; //mathfloor dungf ddeer laf trong xuoong vis duj 5.9 thanhf 5;
+			
+			for(var i = 1; i <=4;i++){
+				var chonso =  parseInt(prompt(" so lan " + i+" nhap so ban muon nef ")); 
+				if(isNaN(chonso)){
+					alert("ban nhap khong phai so ");
+					i--;
+					continue;
+				}
+				if(khoangran === chonso){
+					alert("ban  thang roi so bi mat la "+khoangran);
+					return;
+				}
+				else if(khoangran > chonso){
+					alert("nhap so lon hon ti");
+				}
+			else {
+				alert("nhap so nho hon ti");
+			}
+			if(i===4){
+				alert("het luot roi moi ban nap tien vao de lam so bi mat la "+khoangran)
+			}
+			}
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>

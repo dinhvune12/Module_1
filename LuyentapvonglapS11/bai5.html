@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1> nhap so fibonace ban muon tinh tong dong</h1>
+	<input type="text" id = "nhapso">
+	<button id = "xacnhan"> xac nhan</button>;
+	<p><span id = "inketqua"></span></p>
+	<script>
+		function tinhsone(n){
+			var fn = [];
+			fn[0] = 0;
+			fn[1] = 1;
+			var xuat = document.getElementById("inketqua");
+			var sum = 0;
+			for(var i = 2;i < n;i++){
+				fn[i] = fn[i-2]+ fn[i-1];
+			}
+			for(var i = 0; i<n;i++){
+				sum+=fn[i];
+			}
+			xuat.textContent = "tong ket qua so fibonance " + sum;
+		}
+		function init(){
+			
+			document.getElementById("xacnhan").onclick = function(){
+				var nhap = Number(document.getElementById("nhapso").value);
+				tinhsone(nhap);
+			};
+		}
+		window.onload = init;
+	</script>
+</body>
+</html>
