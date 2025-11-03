@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p> <span id = "carogame"> </span></p>
+	<br>
+	<button id = changex onclick="thaydoidulieu()">doidulieu </button>
+</body>
+<script>
+		var board = [];
+		var indulieu = document.getElementById("carogame");
+		function taokhung(){
+			for (var i = 0; i < 5;i++){
+				board[i] = [];
+				for(var j = 0; j < 5;j++){
+					board[i][j] = 0;
+				}
+			}
+				
+				var x = "";
+			for(var i = 0; i < 5;i++){
+				for(var j = 0; j < 5;j++){
+					x += board[i][j] + "&nbsp&nbsp";
+					
+				}
+				x+= "<br>"
+			}
+			indulieu.innerHTML = x ;
+			
+		}
+		function thaydoidulieu(){
+			var x = prompt("nhap vi tri x");
+			var y = prompt("nhap vi tri y");
+			board[x - 1][y - 1] = "x";
+			var data = "";
+			for(var i = 0; i < 5;i++){
+				for(var j = 0; j < 5;j++){
+					data+= board[i][j] + "&nbsp&nbsp";
+				}
+				data +="<br>";
+			}
+			indulieu.innerHTML = data;
+		}
+		taokhung();
+	</script>
+</html>

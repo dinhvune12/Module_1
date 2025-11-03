@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<h1>Sample screen</h1>
+	<div>
+		<input id = "nhap" type="text"> 
+		<button id = "add" onclick="add()"> add</button>
+		<button id = "display" onclick="hienthi()">display </button>
+		<p><span id = "hienthi"></span></p>
+	</div>
+	<script>
+		var data = [];
+		var input = document.getElementById("nhap").value;
+		function add(){
+			
+			var nhap = document.getElementById("nhap").value;
+			
+			if(nhap === ""){
+				alert("vui long nhap du lieu ");
+			}
+			else{
+				
+			alert("ban vua nhap so " + nhap);
+			data.push(nhap);
+			}
+			document.getElementById("nhap").value = "";
+
+		}	
+		function hienthi(){
+			   let x = "<hr/>";
+			for(var i = 0; i <data.length;i++){
+				x+= `element ${i} = ${data[i]}<br>`;
+			}
+			document.getElementById("hienthi").innerHTML = x;
+		}
+		
+	</script>
+</body>
+</html>

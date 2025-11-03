@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style> 
+		button{
+			width: 200px;
+			height: 20px;
+		}
+	</style>
+</head>
+
+<body>
+<input type="text" id = "input">
+<p><span id = "solieunhap"></span></p>
+<button id = "daonguoc" onclick="main() "></button >
+<script>
+var arr  =[];
+	function input(){
+		var x = "";
+		var n  = document.getElementById("input").value;
+		arr = [];
+		
+		for(var i = 0; i < n;i++){
+			var value = prompt("nhap a["+i+"]=");
+
+			 if (value === null || value.toLowerCase() === "stop") {
+            break; 
+        }
+			arr[i] = Number(value);
+			x+= `a[ ${i} ] = ${arr[i]} <br>`
+
+		}
+		document.getElementById("solieunhap").innerHTML = x;
+		
+	}
+
+	function daonguoc(){
+		
+		for(var i = 0; i < arr.length / 2;i++){
+			var temp = arr[i];
+			arr[i] = arr[arr.length - 1 - i];
+			 arr[arr.length - 1	 - i] = temp;
+			 
+		}
+		
+	}
+	function hienthi(){
+		var x = "";
+
+		for(var i = 0; i < arr.length;i++){
+			x+= `${arr[i]},`
+		}
+		document.getElementById("solieunhap").innerHTML = x;
+	}
+	function main(){
+			input();
+			daonguoc();
+			hienthi();
+		}
+</script>
+</body>
+</html>	
