@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// document.writeln("<h1>" +"bai 1"+"</h1>")
+		// let myColor = ["Red", "Green", "White", "Black"];
+		// document.writeln(myColor.join(", "));
+		// document.writeln("<h1>" +"bai 2"+"</h1>")
+		// var x = prompt("nhap so vao di ");
+		// var result = [x[0]];
+		// for(var i = 1; i < x.length;i++){
+		// 	if(x[i-1] % 2 ===0 && x[i] % 2 === 0 ){
+		// 		result.push("-", x[i]);
+		// 	}else{
+		// 	result.push(x[i])
+		// 	}
+		// }
+	//document.writeln(result.join(""));
+			document.writeln("<h1>" +"bai 2"+"</h1>")
+			var n = prompt("nhap chuoi vao ");
+			var ketqua = ""
+			for(var i = 0; i < n.length;i++){
+				let x = n[i];
+				if(x === x.toUpperCase()){
+					ketqua += x.toLowerCase();
+				}
+				else{
+					ketqua+= x.toUpperCase();
+				}
+			}
+			document.writeln(ketqua);
+	</script>
+</body>
+</html>
