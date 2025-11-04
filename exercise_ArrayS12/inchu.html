@@ -1,0 +1,34 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1> go bat ki cai gi nha</h1>
+		<center>
+				
+				<form name="f">
+					<textarea id="doichune" cols="40" rows="10" ></textarea>
+				</form>
+			</center>
+	</body>
+	<script>
+	
+			var mang = ["v","u","d","e","p","t","r","a","i","n","h","a","t"];
+			var doichunene  = document.getElementById("doichune");
+			var i = 0;
+			doichunene.addEventListener("keydown",function(e){
+				e.preventDefault();// chanwj chuwx ban cua nguowif dungj nhapaj vaof
+				  if (i === 0) doichunene.value = "";
+				doichunene.value+= mang[i];
+				i++;
+				if(i>= mang.length){
+					i = 0;
+					
+				}
+			});
+		
+	</script>
+	</html>

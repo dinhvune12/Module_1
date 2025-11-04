@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>ban co cara</h1>
+	<p><span id = "incaragame"></span></p>
+	<button id = "changvalue" onclick="changvalue()" style="width: 100px; height: 20px;"></button>
+	
+</body>
+<script>
+	var board = [];
+	var indulieu = document.getElementById("incaragame");
+	var luot  = 0;
+	var SIZE = 5;
+	 function hienthi() {
+      var result = "";
+      for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 5; j++) {
+          result += board[i][j] + "&nbsp;&nbsp;";
+        }
+        result += "<br>";
+      }
+      indulieu.innerHTML = result;
+    }
+	function taobanco(){
+		for(var i = 0; i < 5;i++){
+			board[i] = [];
+			for(var j = 0;j < 5;j++){
+				board[i][j] = 0;
+			}
+		}
+		
+		hienthi();
+	} 
+	function changvalue(){
+		
+		var x = parseInt(prompt("nhap x"));
+		var y = parseInt(prompt("nhap y"));
+		if(x>= 0 && x < 5 && y >=0&&y < 5){
+			if(board[x][y] === 0){
+				if(luot % 2 ===0){
+					board[x][y] = "X";
+				}
+				else{
+					board[x][y] = "O";
+				}
+				luot++;
+				hienthi();
+			}
+			else{
+				alert("o nay da co roi");
+			}
+		}
+		else{
+			alert("nhap trong pham vi cho phep")
+		}
+		var mark = (luot % 2 === 0) ? "X" : "O";
+		board[x][y] = mark;
+		  if (checkwin(x, y, mark)) {
+        alert("Người chơi " + mark + " thắng!");
+        createBoard(); 
+      } else {
+        turn++;
+      } 
+	}
+	function checkwin(x,y,mark){
+		const mang = [[0,1], [1,0],[1,1],[1,-1]];
+		for (var [dx,dy] of mang){
+			var count = 1;
+			var i = x+dx; 
+			var j = y + dy;
+			while(i>=0&&i < SIZE && j>=0 && j < SIZE &&board[i][j]===mark ){
+				count++;
+				i+=dx;
+				j+=dy;
+			}
+			 i = x-dx; 
+			 j = y - dy;
+			while(i>=0&&i < SIZE && j>=0 && j < SIZE &&board[i][j]===mark ){
+				count++;
+				i-=dx;
+				j-=dy;
+			}
+			if(count >=5) return true;
+		}
+		return false;
+	}
+	taobanco();
+</script>
+</html>

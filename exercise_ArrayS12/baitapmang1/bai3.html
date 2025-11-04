@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var mang = [];
+		function nhapmang(){
+			for(var i = 0; i < 10;i++){
+				mang[i] = Math.floor(Math.random() * 100);
+			}
+		}
+		function kiemtrasomax(){
+			var max = -Infinity;
+			var index  = -1;
+			var average = 0;
+			var sum = 0;
+			var count = 0;
+			for(var i = 0; i < 10;i++){
+				if(mang[i] > max) max = mang[i];
+				index = i;
+				sum += mang[i];
+				count++;
+			}
+			average = sum / count;
+			return {max:max,index:index,average:average };
+		}
+		function inmang(){
+			for(var i = 0; i < 10;i++){
+				document.writeln(mang[i]);
+			}
+			var lon = kiemtrasomax();
+			document.writeln("<br> so llon nhat la " + lon.max +"gia tri trung binh la  "+ lon.average.toFixed(5));
+		}
+		nhapmang();
+		inmang();
+</script>
+</html>

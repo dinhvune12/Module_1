@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var mang = [];
+		function nhapmang(){
+			for(var i = 0; i < 10;i++){
+				mang[i] = Math.floor(Math.random() * 100);
+			}
+		}
+		function sapxep(){
+				for(var i = 0; i < mang.length;i++){
+				mang.sort((a,b) =>a-b);
+			}
+		}
+		function inmang(){
+			for(var i = 0; i < mang.length;i++){
+				document.writeln(mang[i]);
+			}
+			
+			
+		}
+		nhapmang();
+		inmang();
+
+		sapxep();
+		document.writeln("mang sau khi sap xep");
+		inmang();
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var manga = [];
+	var mangb = [];
+	var mangc = [];
+		function nhapmang(){
+			for(var i = 0; i < 10;i++){
+				manga[i] = Math.floor(Math.random() * 100);
+				mangb[i] = Math.floor(Math.random() * 100);
+			}
+		}
+		function mergrarray(){
+			var j = 0
+			//mangc = manga.concat(mangb); dung nayf thi hoiw donw gian
+			for(var i = 0; i < manga.length;i++){
+				mangc[j] = manga[i];
+				j++ 
+			}
+			for(var i = 0; i < mangb.length;i++){
+				mangc[j] = mangb[i];
+				j++ 
+			}
+		}
+		function inmang(){
+			for(var i = 0; i < mangc.length;i++){
+				document.writeln(mangc[i]);
+			}
+			
+			
+		}
+		nhapmang();
+		inmang();
+
+		mergrarray();
+		document.writeln("mang sau khi merge");
+		inmang();
+</script>
+</html>

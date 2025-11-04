@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var mang = [];
+		function nhapmang(){
+			for(var i = 0; i < 10;i++){
+				mang[i] = prompt("nhap so thu " + [i+1]);
+			}
+		}
+		function kiemtraso(){
+			var count =0;
+			for(var i = 0; i < 10;i++){
+				if(mang[i] >=10){
+					count++;
+				}
+			}
+			return count;
+		}
+		function inmang(){
+			for(var i = 0; i < 10;i++){
+				document.writeln(mang[i]);
+			}
+			var dem = kiemtraso();
+			document.writeln("<br> so lon hon 10 co la" + dem);
+		}
+		nhapmang();
+		inmang();
+	</script>
+</body>
+</html>
