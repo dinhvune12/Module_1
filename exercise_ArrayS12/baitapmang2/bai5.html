@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a=[];
+	function nhap(){
+		var x =prompt("nhap so luong ky tu trong mang");
+		x = x.replace(/[.,;:'"|\-=+()]/g, ' ');
+		var count = 0;
+		//x = x.replace(/[.,;:'"|\-=+()!?]/g, ' ');
+
+		var check = false;
+		for(var i =0; i < x.length;i++){
+			var ch = x[i];
+
+			if(ch != " " && !check){
+				count++;
+				check= true;
+			}
+			else if (ch == " "){
+				check = false;
+			}
+		}
+		document.writeln("so tu co trong mang la "+ count);
+	}
+	
+	
+	nhap();
+	
+</script>
+</html>

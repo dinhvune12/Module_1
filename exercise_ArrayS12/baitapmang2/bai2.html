@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p> <span id = "inmang"></span></p>
+</body>
+<script>
+	mang =  [ 'c', 's', 'c', '2', '6', '1' ];
+	
+	function daonguoc(){
+		for(var i = 0; i < mang.length/ 2;i++){
+			var temp = mang[i];
+			mang[i] = mang[mang.length-1-i];
+			mang[mang.length-1-i] = temp;
+		}
+	}
+	function inmang(ten){
+		var x = "";
+		var inmang = document.getElementById("inmang")
+		for(var i = 0; i < mang.length;i++){
+			x+= mang[i];
+		}
+		inmang.innerHTML +=ten+" "+ x+"<br>";
+	}
+	
+	inmang("mang ban bau");
+	daonguoc();
+	
+	inmang("mang sao khi dao nguoc");
+</script>
+</html>
