@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type = "text" id="inputText">
+	<button onclick="main()">Click me</button>
+</body>
+<script>
+	var x = document.getElementById("inputText");
+	function raise(x){
+		return x+1;
+	}
+	function main(){
+			document.writeln(raise(Number(x.value)));
+	}
+
+</script>
+</html>

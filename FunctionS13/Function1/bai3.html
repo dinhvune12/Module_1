@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text", id="inputText">
+	<input type="text", id="inputText2">
+	<button onclick="main()">Click me</button>
+</body>
+<script>
+	function addNumbers(a, b) {
+    a = Number(document.getElementById("inputText").value);
+	b = Number(document.getElementById("inputText2").value);
+	if(a > b){
+		return ("so a lon hon so b");
+	}
+	else if(a < b){
+		return a+ b;
+	}
+	
+	}
+function main(){
+		document.writeln(addNumbers());
+	}
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="main()">find the starts</button>
+	<p id="result"></p>
+	<script>
+		var manga = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+		var mangb = ["Ursa Minor", "Taurus", "Cygnus", "Lyra"," Aquila", "Ursa Major", "Leo"];
+		function findthestrart(starts){
+			for(var i = 0; i < manga.length;i++){
+				if(manga[i].toLocaleLowerCase() === starts.toLocaleLowerCase()){
+					return mangb[i];
+				}
+			}
+			return "Not found";
+		}
+		function main(){
+		var starts = prompt("Enter the starting letter:");
+		var result = findthestrart(starts);
+		document.getElementById("result").innerHTML = result;
+		}
+	</script>
+</body>
+</html>
