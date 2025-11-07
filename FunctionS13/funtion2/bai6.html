@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function songuyenduong(){
+			var n = Number(prompt("Nhap so nguyen duong:"));
+			if(isNaN(n) || n <= 0 ){
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		result = songuyenduong();
+		document.write("dap an la: " +  result + "<br>");
+	</script>
+</body>
+</html>

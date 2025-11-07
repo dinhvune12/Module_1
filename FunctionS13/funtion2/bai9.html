@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function timkytutrongmang(){
+			var str = ["h", "e", "l", "l", "o"];
+			var kyTu = prompt("Nhap ky tu can tim:");
+			if(str.indexOf(kyTu) !== -1){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		
+		result = timkytutrongmang();
+		document.write("Ky tu co trong chuoi khong? " + result);
+	</script>
+</body>
+</html>

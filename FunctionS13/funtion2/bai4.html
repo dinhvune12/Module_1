@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function songuyennhonhat(a, b ,c){
+			if(isNaN(a) || isNaN(b) || isNaN(c)){
+				return "Vui long nhap so";
+			}
+			
+			if(b < a){
+				a = b;
+			}
+			if(c < a){
+				a = c;
+			}
+			return a;
+		}
+		function main(){
+			var a = Number(prompt("Nhap so thu nhat:"));
+			var b = Number(prompt("Nhap so thu hai:"));
+			var c = Number(prompt("Nhap so thu ba:"));
+			var ketqua = songuyennhonhat(a, b ,c);
+			document.write("So nguyen nho nhat la: " + ketqua);
+		}
+		main();
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function doicho2soguyen(a,b){
+			if(isNaN(a) || isNaN(b) ){
+				return "Vui long nhap so nguyen";
+			}
+			var temp = a;
+			a = b;
+			b = temp;
+			return `Sau khi doi cho: a = ${a}, b = ${b}`;
+		}
+		function main(){
+			var so1 = Number(prompt("Nhap so nguyen a:"));
+			var so2 = Number(prompt("Nhap so nguyen b:"));
+			var ketqua = doicho2soguyen(so1,so2);
+			document.write(ketqua);
+		}
+		main();
+	</script>
+</body>
+</html>

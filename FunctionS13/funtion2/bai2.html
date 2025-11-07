@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const PI = 3.14;
+		function dientichhinhtron(r){
+			if(isNaN(r) || r < 0){
+				return "Vui long nhap so duong";
+			}
+			return PI * r * r;
+		}
+		function chuviht(r){
+			if(isNaN(r) || r < 0){
+				return "Vui long nhap so duong";
+			}
+			return 2 * PI * r;
+		}
+		function main(){
+			var r = Number(prompt("Nhap ban kinh hinh tron:"));
+			var dientich = dientichhinhtron(r);
+			var chuvi = chuviht(r);
+			document.write("Dien tich hinh tron la: " + dientich + "<br>");
+			document.write("Chu vi hinh tron la: " + chuvi);
+		}
+		main();
+	</script>
+</body>
+</html>
