@@ -1,0 +1,84 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			table, th, td {
+			  border: 0.2px solid black;
+			  border-collapse: collapse;
+			 background-color: #d8e3e2;
+			}
+			th, td {
+			  padding: 10px;
+			  text-align: left;
+			}
+			</style>
+	</head>
+	<body>
+		<table >
+			<tr ">
+				<td>
+					<input type="text" id = "nhap" placeholder="New product" style="width: 200px; 
+		height: 20px;">
+				</td>
+				<td>
+					<button onclick="nhap()" style="display: block; background-color: green;width: 40px; height: 30px;">add</button>
+				</td>
+			</tr>
+			
+		
+		</table>
+		<table style="margin-top: 8px; ">
+			<tbody id="inne"></tbody>
+		</table>
+	</body>
+	<script>
+	var products = [];
+
+
+	function hienthi(){
+		var tongsanpham = products.length;
+		
+		var x = "<tr > <th></th><th colspan = '1'>Product name  </th>"+"<th colspan= '3' style = 'color:red; text-align: right;'>"+tongsanpham+"</th></tr>";
+		var count = 0;
+		for(var i = 0; i <products.length;i++){
+
+			x+= `<tr>
+			<td>${count+1}</td>
+			
+				<td>${products[i]}</td>
+				<td><button onclick="edit(${i})" style = 'background-color: green; width: 50px; height: 30px;color: white;'>edit</button>
+				</td><td><button onclick = "deleted(${i})" style = 'background-color: green; width: 50px; height: 30px;color: white;'>delete</button></td>
+				</tr>`;
+				count++;
+		}
+		document.getElementById("inne").innerHTML = x;
+		if(products.length === 0){
+			document.getElementById("inne").innerHTML = "";
+		}
+	}
+	function nhap(){
+		var productname = document.getElementById("nhap").value;
+		if(productname === ""){
+			alert("vui long nhap ten san pham");
+			return;
+		}
+		products.push(productname);
+		document.getElementById("nhap").value = "";
+		hienthi();
+
+	}
+	function edit(i){
+		var newname = prompt("nhap ten moi cho san pham:");
+		products[i] = newname;
+		hienthi();
+	}
+	function deleted(i){
+			products.splice(i,1);
+			hienthi();
+	}
+
+	</script>
+	</html>
