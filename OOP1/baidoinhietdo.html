@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class nhietdo{
+		constructor(nhietdo){
+			this.nhietdo = nhietdo;
+		}
+		get F(){
+			return 9/5 * this.nhietdo + 32;
+		}
+		get K(){
+			return this.nhietdo + 273.15;
+		}
+	}
+	var nhietdone = Number(prompt("nhap nhiet do muon chuyen doi"));
+	var x = new nhietdo(nhietdone);
+	document.writeln(x.F);
+	document.writeln(x.K);
+</script>
+</html>

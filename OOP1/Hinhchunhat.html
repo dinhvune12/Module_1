@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+<canvas id = "mycanva" width="200"  height="100" style="border: 1px solid black;"></canvas>
+
+</body>
+<script>
+	class hinhchunhat{
+		constructor(chieudai,chieurong){
+			this.chieudai= chieudai;
+			this.chieurong= chieurong;
+		} 
+		get dientichHCN(){
+			return this.chieudai * this.chieurong;
+		}
+		get chuviHCN(){
+			return (this.chieudai + this.chieurong) * 2;
+		}
+		 hienthianh(){
+			var c = document.getElementById("mycanva");
+			var hihi = c.getContext("2d");
+			hihi.beginPath();
+			hihi.rect(80,30,this.chieudai,this.chieurong);
+			hihi.fillStyle = "black";
+			hihi.fill();
+			hihi.stroke();
+		}
+	}
+	var hine = Number(prompt("nhap chieu dai ne"));
+	var y = Number(prompt("nhap chie rong"));
+	var x = new hinhchunhat(hine,y);
+	document.writeln(x.chuviHCN);
+	document.writeln(x.dientichHCN);
+	x.hienthianh();
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class congtac{
+			constructor(button = true){
+				this.button = button;
+			}
+
+		}
+		class bongden extends congtac{
+			constructor (click ,button = true){
+				super(button);
+				this.click = click;
+			}
+			trangthaibongden(){
+				this.click = Number(prompt("1 de bat va 2 de tat"));
+				if(this.click === 1){
+					alert("den duoc bat");
+					this.button = true;
+				}
+				if(this.click === 2){
+					if(this.button != true){
+						alert("den khong duoc bat nen khong tat duoc")
+					}
+					else{
+	alert("den duoc tat ");
+					this.button = false;		
+					}
+				
+				}
+			}
+			thongtinbongden(){
+				if(this.button == true){
+					alert("den dang duoc bat");
+
+				}
+				else {
+					alert("den dang duoc tat");
+				}
+			}
+		}
+		let ds = new bongden();
+		var choose ;
+		var soluot = 10; ;
+		do{
+			
+			choose = Number(prompt("1 de vao xem bat hay tat 2 la xem trang thai den"));
+			if(choose === 1){
+				ds.trangthaibongden();
+				soluot--;
+			}
+			else if( choose == 2){
+				ds.thongtinbongden();
+				soluot--;
+			}
+			
+			alert("ban con "+ soluot+" luot");
+		}while(soluot >0 );
+	</script>
+</body>
+</html>

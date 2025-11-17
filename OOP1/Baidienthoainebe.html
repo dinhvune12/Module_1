@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class dienthoai{
+		constructor(trangthaipin, tinnhansoan, tinnhandagui,kiemtra){
+			this.trangthaipin = trangthaipin;
+			this.tinnhansoan = tinnhansoan;
+			this.tinnhandagui = tinnhandagui;
+			this.kiemtra = kiemtra;
+		}
+		constructor(){
+			this.trangthaipin = 0;
+			this.tinnhansoan = "";
+			this.tinnhandagui = "";
+			this.kiemtra = false;
+		}
+		checkdienthoai(){
+			if(this.kiemtra === false){
+				alert("dien thoai dang bat va trang thai pin la " + this.trangthaipin);
+			}
+			else if(this.kiemtra === true){
+				alert("dien thoai dang tat");
+			}
+		}
+		set thaydoitrangthai(x){
+			 x = Number(prompt("nhap 1 la tat nhap 2 la  mo"));
+			if(x == 1){
+				this.kiemtra = true;
+				alert("dien thoai da tat")
+			}
+			if(x == 2){
+				this.kiemtra = false;
+				alert("dien thoai da bat");
+			}
+			trangthaipin--;
+		}
+		sacpin(){
+			if(this.trangthaipin === 100){
+				alert("pin da len 100 khong the sac");
+			}
+			else if (this.trangthaipin < 100){
+				alert("dang sac vui long pin")
+				this.trangthaipin++;
+			}
+		}
+		soantinnhan(){
+			var nhap = prompt("nhap tin nhan soan ");
+			this.tinnhansoan  = nhap;
+			trangthaipin--;
+		}
+
+	}
+	
+</script>
+</html>

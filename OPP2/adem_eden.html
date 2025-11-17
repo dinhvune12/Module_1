@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+
+</body>
+<script>
+	class apple{
+		constructor(weightappel = 10){
+			this.weightappel = weightappel;
+		}
+		
+		decrease(){
+			if(this.weightappel> 0){
+
+			
+			this.weightappel--;
+			}
+		}
+		isEmpty(){
+			return this.weightappel <= 0;
+		}
+		get getweightappel(){
+			 return this.weightappel;
+		}
+		checkapple(){
+			if(this.weightappel > 0){
+				alert("tao con la "+ this.weightappel)
+			}
+			else{
+				alert("tao het roi")
+			}
+		}
+	}
+	class human extends apple{
+		constructor(name, gender, weight, weightappel){
+			super(weightappel);
+			this.name = name;
+			this.gender= gender;
+			this.weight = weight;
+			
+		}
+		isMale(){
+
+		}
+		setgender(){
+
+		}
+		checkapple(){
+			this.apple.checkapple();
+		}
+		eatApple(){
+			if(!this.apple.isEmpty()){
+				this.apple.decrease();
+				this.weight++;
+			}
+			else{
+				alert("het tao roi nhe");
+			}
+		}
+		display(){
+			return "ten la "+ this.name+"gioi tinh la "+ this.gender+"can nang la "+this.weight;
+		}
+		getname(){
+
+		}
+		getweight(){
+
+		}
+		setweight(){
+
+		}
+		
+	}
+	class adam extends human{
+		constructor(name, gender, weight){
+			super(name, gender, weight);
+		}
+		eatApple(){
+			document.writeln("adam an tao");
+			super.eatApple();
+		}
+		getname(name){
+			this.name = name;
+		}
+		setgender(sex){
+			this.gender = sex;
+		}
+		getweight(weight){
+			this.weight = weight;
+		}
+		
+	}
+	class eva extends human{
+		constructor(name, gender, weight,){
+			super(name, gender, weight);
+		}
+		eatApple(){
+			document.writeln("eva an tao");
+			super.eatApple();
+		}
+		getname(name){
+			this.name = name;
+		}
+		setgender(sex){
+			this.gender = sex;
+		}
+		getweight(weight){
+			this.weight = weight;
+		}
+		display(){
+		return "ten la "+ this.name+"gioi tinh la "+ this.gender+"can nang la "+this.weight;
+		}
+	}
+	class emdamnhap{
+		constructor(choose = 0){
+			this.list = []
+			this.choose = choose;
+			this.apple = new apple();
+		}
+		eva(name, gender,weight){
+			var x =new eva(name,gender,weight);
+			x.apple = this.apple;
+			this.list.push(x);
+		}
+		adam(name, gender,weight,weightappel){
+			var y =new adam(name,gender,weight,weightappel);
+			y.apple = this.apple;
+			this.list.push(y);
+		}
+		
+	}
+	
+	let ds = new emdamnhap();
+	let number;
+	do{
+		 number = Number(prompt("so 1 la edam 2 là eden"));
+	if(number === 1){
+		let name = prompt("nhap nem di ")
+		let gender= prompt("nhap gioi tinh di")
+		let weight= prompt("nhap ki di ");
+		ds.eva(name,gender,weight);
+		
+	}
+	else if(number === 2){
+		let name = prompt("nhap nem di ")
+		let gender= prompt("nhap gioi tinh di")
+		let weight= prompt("nhap ki di ");
+		ds.adam(name,gender,weight);
+		
+	}
+	else if(number === 3){
+		if(ds.list[0]){
+
+		
+		alert(ds.list[0].display());
+	}
+	else{
+		alert("chua co adam")
+	}
+}
+	else if(number===4){
+		if(ds.list[1]){
+
+		
+		alert(ds.list[1].display());
+	}
+	else{
+		alert("chua co eva")
+	}
+	}
+	else if(number === 5 ){
+		if(ds.list[0]){
+alert("adam an tao ");
+		ds.list[0].eatApple();
+		}
+		else{
+			alert("chua co adam")
+		}
+	}
+	else if(number === 6 ){
+		if(ds.list[1]){
+			alert("eva an tao ");
+		ds.list[1].eatApple();
+		}
+		else{
+		alert("chua co eva")
+	}
+}
+	else if (number===7){
+		ds.apple.checkapple();
+	}
+} while(number !== 0);
+</script>
+</html>
