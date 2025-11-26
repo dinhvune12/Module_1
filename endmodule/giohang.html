@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      padding: 40px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cart-wrapper {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px 25px 30px;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .cart-header h2 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .cart-header a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 14px;
+    }
+
+    #cart table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    #cart th,
+    #cart td {
+      padding: 10px 8px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    #cart th {
+      background: #f0f0f0;
+      border-bottom: 2px solid #ddd;
+    }
+
+    #cart tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    #cart tr:hover {
+      background: #f1f9ff;
+    }
+
+    .btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      margin: 0 2px;
+      min-width: 28px;
+    }
+
+    .btn-qty {
+      background: #e0e0e0;
+    }
+
+    .btn-qty:hover {
+      background: #d0d0d0;
+    }
+
+    .btn-del {
+      background: #ff4d4f;
+      color: #fff;
+    }
+
+    .btn-del:hover {
+      background: #e04345;
+    }
+
+    .total-price {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 30px 0;
+      color: #777;
+      font-size: 15px;
+    }
+
+    /* ====== FORM THANH TOÁN ====== */
+    .checkout-box {
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+    }
+
+    .checkout-box h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .checkout-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .checkout-row input {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .btn-pay {
+      margin-top: 5px;
+      padding: 10px 18px;
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+      float: right;
+    }
+
+    .btn-pay:hover {
+      background: #15803d;
+    }
+	.popup {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: #16a34a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: none;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  animation: fadeInOut 3s forwards;
+  z-index: 9999;
+}
+
+  </style>
+</head>
+<body>
+  <div class="cart-wrapper">
+	<div id="successPopup" class="popup">Thanh toán thành công!</div>
+
+    <div class="cart-header">
+      <h2>Giỏ hàng của bạn</h2>
+      <a href="sanpham.html">⬅ Quay lại trang sản phẩm</a>
+    </div>
+
+    <div id="cart"></div>
+
+    
+    <div id="checkout-section" class="checkout-box" style="display:none;">
+      <h3>Thông tin thanh toán</h3>
+      <div class="checkout-row">
+        <input type="text" id="tenTT" placeholder="Họ tên người nhận">
+        <input type="text" id="sdtTT" placeholder="Số điện thoại">
+      </div>
+      <div class="checkout-row">
+        <input type="text" id="diachiTT" placeholder="Địa chỉ nhận hàng">
+      </div>
+      <button class="btn-pay" onclick="thanhtoan()">Thanh toán</button>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+
+  <script>
+    function hienthigiohang() {
+      var sum = 0;
+      var arr = JSON.parse(localStorage.getItem("cart")) || [];
+
+      var cartDiv = document.getElementById("cart");
+      cartDiv.innerHTML = "";
+
+      var checkoutBox = document.getElementById("checkout-section");
+
+      if (arr.length === 0) {
+        cartDiv.innerHTML = '<p class="empty-cart">Giỏ hàng hiện đang trống.</p>';
+        if (checkoutBox) checkoutBox.style.display = "none";
+        return;
+      } else {
+        if (checkoutBox) checkoutBox.style.display = "block";
+      }
+
+      var tableHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tên sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      for (var i = 0; i < arr.length; i++) {
+        var sp = arr[i];
+        var thanhTien = sp[2] * sp[3];
+        sum += thanhTien;
+
+        tableHTML += `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${sp[1]}</td>
+            <td>${sp[2]}</td>
+            <td>${sp[3]}</td>
+            <td>${thanhTien}</td>
+            <td>
+              <button class="btn btn-qty" onclick="giamSL(${sp[0]})">-</button>
+              <button class="btn btn-qty" onclick="tangSL(${sp[0]})">+</button>
+              <button class="btn btn-del" onclick="xoaSP(${sp[0]})">Xoá</button>
+            </td>
+          </tr>
+        `;
+      }
+
+      tableHTML += `
+          </tbody>
+        </table>
+      `;
+
+      cartDiv.innerHTML = tableHTML;
+      cartDiv.innerHTML += '<div class="total-price">Tổng giá: ' + sum + '</div>';
+    }
+
+    function xoaSP(id) {
+      var newarr = [];
+      var arr = JSON.parse(localStorage.getItem("cart")) || [];
+
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i][0] != id) {
+          newarr.push(arr[i]);
+        }
+      }
+
+      localStorage.setItem("cart", JSON.stringify(newarr));
+      hienthigiohang();
+    }
+
+    function tangSL(id) {
+      var arr = JSON.parse(localStorage.getItem("cart")) || [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i][0] === id) {
+          arr[i][3]++;
+          break;
+        }
+      }
+      localStorage.setItem("cart", JSON.stringify(arr));
+      hienthigiohang();
+    }
+
+    function giamSL(id) {
+      var arr = JSON.parse(localStorage.getItem("cart")) || [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i][0] === id) {
+          arr[i][3]--;
+          if (arr[i][3] <= 0) {
+            xoaSP(id);
+            return;
+          }
+          break;
+        }
+      }
+      localStorage.setItem("cart", JSON.stringify(arr));
+      hienthigiohang();
+    }
+
+
+    function thanhtoan() {
+  var ten = document.getElementById("tenTT").value.trim();
+  var sdt = document.getElementById("sdtTT").value.trim();
+  var diachi = document.getElementById("diachiTT").value.trim();
+
+  
+  if (!ten || !sdt || !diachi) {
+    alert("Vui lòng nhập đầy đủ HỌ TÊN, SỐ ĐIỆN THOẠI và ĐỊA CHỈ trước khi thanh toán.");
+    return;
+  }
+
+
+  var phoneRegex = /^\d{9,11}$/;
+  if (!phoneRegex.test(sdt)) {
+    alert("Số điện thoại không hợp lệ (chỉ chứa số, 9–11 số).");
+    return;
+  }
+
+  
+  var popup = document.getElementById("successPopup");
+  popup.style.display = "block";
+  popup.textContent = "Thanh toán thành công! Cảm ơn " + ten + " 🥰";
+
+  setTimeout(function () {
+    popup.style.display = "none";
+  }, 3000);
+
+ 
+  localStorage.removeItem("cart");
+  document.getElementById("tenTT").value = "";
+  document.getElementById("sdtTT").value = "";
+  document.getElementById("diachiTT").value = "";
+  hienthigiohang();
+}
+    hienthigiohang();
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: yellow;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        background: #fff;
+        width: 350px;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        
+    }
+
+
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: yellow;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid white;
+        font-size: 15px;
+    }
+
+    #checkdangnhap {
+        width: 100%;
+        background: yellow;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: 0.2s;
+    }
+
+    #checkdangnhap:hover {
+        background: yellow;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Đăng Nhập</h2>
+
+    <div class="input-group">
+        <label>Tài khoản</label>
+        <input type="text" id="taikhoan" placeholder="Nhập tài khoản...">
+    </div>
+
+    <div class="input-group">
+        <label>Mật khẩu</label>
+        <input type="password" id="matkhau" placeholder="Nhập mật khẩu...">
+    </div>
+
+    <button id="checkdangnhap" onclick="dangnhap()">Đăng nhập</button>
+</div>
+
+<script>
+function dangnhap() {
+    var tk = document.getElementById("taikhoan").value.trim();
+    var mk = document.getElementById("matkhau").value.trim();
+
+    if (tk === "admin123" && mk === "adminne") {
+        window.location.href = "sanphamquanli.html";
+			alert("dang nhập thành công");
+    } 
+    else if (tk === "khachhang123" && mk === "khanhhangne") {
+        window.location.href = "sanpham.html";
+		alert("dang nhập thành công");
+    } 
+    else {
+        alert("Tài khoản hoặc mật khẩu không đúng!");
+    }
+}
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") dangnhap();
+});
+</script>
+
+</body>
+</html>
